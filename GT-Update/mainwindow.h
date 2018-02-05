@@ -28,7 +28,8 @@ private:
     QScrollBar *scrollBar;
     QTimer *readTimer;
     SerialParameter serialParmeter;
-
+    bool isFirstOpen;           // 是否首次打开
+    QString fileName;
     void readSerialCfg();
 
 private slots:

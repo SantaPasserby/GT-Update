@@ -64,6 +64,7 @@ void MainWindow::initInterface()
     ui->textEdit->setPlaceholderText(tr("接收区："));
 //    serialDialog = new SerialDialog(this);
     readTimer = new QTimer(this);
+    isFirstOpen = true;
 }
 
 
@@ -187,9 +188,32 @@ void MainWindow::on_disconnectBtn_clicked()
 
 void MainWindow::on_selectBtn_clicked()
 {
-   QFileDialog::getOpenFileUrl(
+
+    QFile file("remark.ini");
+    QTextStream out(&file);
+    QTextCodec *codec = QTextCodec::codecForName("GBK");
+
+    if(isFirstOpen)
+    {
+        if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QByteArray byteArray = file.readLine();
+        fileName = codec->toUnicode(byteArray);
+        isFirstOpen = false;
+        file.close();
+    }
+    fileName  = QFileDialog::getOpenFileName(
                               this,
-                              "Select one or more files to open",
-                              QUrl(QDir::currentPath()),
-                              "Images (*.png *.xpm *.jpg)");
+                              tr("选择文件"),
+                              fileName,
+                              "固件文件(*.bin)");
+    if(!fileName.isEmpty())
+    {
+        if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+            return;
+        QFileInfo fileInfo(fileName);
+        out << fileInfo.absolutePath();
+    }
+    file.close();
+
 }
