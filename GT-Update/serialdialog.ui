@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SerialDialog</class>
+ <widget class="QDialog" name="SerialDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>248</width>
+    <height>243</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabSerialSet">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="sericalSetTab">
+      <attribute name="title">
+       <string>串口设置</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="7" column="1">
+        <widget class="QComboBox" name="dataBitsComboBox"/>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="flowControlLabel">
+         <property name="text">
+          <string>流控制：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comComboBox"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="dataBitsLabel">
+         <property name="text">
+          <string>数据位：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QComboBox" name="stopBitsComboBox"/>
+       </item>
+       <item row="12" column="1">
+        <widget class="QComboBox" name="flowCtrlComboBox"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="serialNumLabel">
+         <property name="text">
+          <string>串口号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="parityLabel">
+         <property name="text">
+          <string>奇偶校验：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="stopBitsLabel">
+         <property name="text">
+          <string>停止位：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="parityComboBox"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="baudRateLabel">
+         <property name="text">
+          <string>波特率：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="baudComboBox"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="otherSetTab">
+      <attribute name="title">
+       <string>其它设置</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>十六进制显示</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="text">
+          <string>发送时添加回车符</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="radioButton_1">
+         <property name="text">
+          <string>发送时什么都不加</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>选择设备：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="comboBox_7"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QRadioButton" name="radioButton_3">
+         <property name="text">
+          <string>发送时添加换行符</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QRadioButton" name="radioButton_4">
+         <property name="text">
+          <string>发送时加回车和换行</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="serialApplyBtn">
+       <property name="text">
+        <string>确定</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="serialCancelBtn">
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
